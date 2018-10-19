@@ -1,5 +1,6 @@
 @import "./css/reset.css";
 @import "./css/vars.css";
+@import "./css/header.css";
 
 html {
   box-sizing: border-box;
@@ -17,24 +18,6 @@ body {
   padding: 2rem;
   background-color: var(--backgroundColor);
   color: var(--textColor);
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--textColor);
-  font-variant: small-caps;
-  position: relative;
-
-  &::after {
-    content: "";
-    background-image: image-set(url("./assets/img/balloon.png") 1x);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    height: 100%;
-    width: 40vw;
-  }
 }
 
 /** Dit is hier wat commentaar, dat er uit moet in production**/

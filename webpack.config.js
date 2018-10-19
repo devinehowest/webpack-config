@@ -31,7 +31,7 @@ module.exports = (env, { mode }) => {
           ]
         },
         {
-          test: /\.(je?pg|png)$/,
+          test: /\.(je?pg|png|svg)$/,
           use: {
             loader: "url-loader",
             options: {
