@@ -1,0 +1,64 @@
+@import "./css/reset.css";
+@import "./css/vars.css";
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 2rem;
+  font-family: Georgia;
+  padding: 2rem;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: color(var(--textColor) lightness(50%));
+  font-variant-caps: small-caps;
+  position: relative;
+
+  &::after {
+    content: "";
+    background-image: url("./assets/img/balloon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 40vw;
+  }
+}
+
+/** Dit is hier wat commentaar, dat er uit moet in production**/
+
+p {
+  line-height: 1.8;
+}
+
+strong {
+  font-weight: bold;
+}
+
+img {
+  filter: grayscale(100%);
+  margin: 1rem auto;
+  display: block;
+
+  &:hover {
+    filter: none;
+  }
+}
+
+@media screen and (width >= 500px) {
+  h1 {
+    font-size: 6vw;
+  }
+}
