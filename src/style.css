@@ -22,13 +22,13 @@ body {
 h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: color(var(--textColor) lightness(50%));
-  font-variant-caps: small-caps;
+  color: var(--textColor);
+  font-variant: small-caps;
   position: relative;
 
   &::after {
     content: "";
-    background-image: url("./assets/img/balloon.png");
+    background-image: image-set(url("./assets/img/balloon.png") 1x);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -45,6 +45,11 @@ p {
 
 strong {
   font-weight: bold;
+
+  @nest p & {
+    /** enkel om @nest  voorbeeld aan te halen**/
+    color: green;
+  }
 }
 
 img {

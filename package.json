@@ -26,5 +26,11 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "prod": "rm -rf dist/ && webpack --mode production"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
 }
