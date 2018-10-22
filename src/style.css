@@ -15,7 +15,7 @@ html {
 body {
   font-size: 2rem;
   font-family: Georgia;
-  padding: 2rem;
+  padding: calc(1rem * 2); /*reduced calc test*/
   background-color: var(--backgroundColor);
   color: var(--textColor);
 }
@@ -23,7 +23,7 @@ body {
 /** Dit is hier wat commentaar, dat er uit moet in production**/
 
 p {
-  line-height: 1.8;
+  line-height: calc(1.8);
 }
 
 strong {
@@ -31,7 +31,7 @@ strong {
 
   @nest p & {
     /** enkel om @nest  voorbeeld aan te halen**/
-    color: green;
+    color: darkorange;
   }
 }
 
@@ -43,6 +43,18 @@ img {
   &:hover {
     filter: none;
   }
+}
+
+footer {
+  background-image: url("assets/img/nadar.svg");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 10vw;
+  height: 7rem;
+}
+
+.hide {
+  display: none;
 }
 
 @media screen and (width >= 500px) {
