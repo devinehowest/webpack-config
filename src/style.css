@@ -15,7 +15,7 @@ html {
 body {
   font-size: 2rem;
   font-family: Georgia;
-  padding: calc(1rem * 2); /*reduced calc test*/
+  padding: calc((var(--margin) * 2) + 2vw); /*reduced calc test*/
   background-color: var(--backgroundColor);
   color: var(--textColor);
 }
