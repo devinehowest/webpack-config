@@ -25,8 +25,10 @@ module.exports = (env, { mode }) => {
           test: /\.html$/,
           use: [
             {
-              loader: "html-loader",
-              options: { minimize: true }
+              loader: "html-srcsets-loader",
+              options: {
+                attrs: [":srcset"]
+              }
             }
           ]
         },
