@@ -48,9 +48,11 @@ module.exports = (env, { mode }) => {
               ? MiniCssExtractPlugin.loader
               : "style-loader",
             "css-loader",
+            "resolve-url-loader",
             {
               loader: "postcss-loader",
               options: {
+                sourceMap: true,
                 plugins: [
                   require(`postcss-import`),
                   postcssPresetEnv({ stage: 0 })
