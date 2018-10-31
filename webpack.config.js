@@ -1,13 +1,13 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebPackPlugin = require(`html-webpack-plugin`);
+const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
 const postcssPresetEnv = require(`postcss-preset-env`);
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require(`optimize-css-assets-webpack-plugin`);
 
-module.exports = (env, { mode }) => {
+module.exports = (env, {mode}) => {
   console.log(mode);
   return {
     output: {
-      filename: "[name].[chunkhash].js"
+      filename: `[name].[chunkhash].js`
     },
     devServer: {
       overlay: true
@@ -18,16 +18,16 @@ module.exports = (env, { mode }) => {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader"
+            loader: `babel-loader`
           }
         },
         {
           test: /\.html$/,
           use: [
             {
-              loader: "html-srcsets-loader",
+              loader: `html-srcsets-loader`,
               options: {
-                attrs: [":srcset"]
+                attrs: [`:srcset`]
               }
             }
           ]
@@ -35,29 +35,29 @@ module.exports = (env, { mode }) => {
         {
           test: /\.(je?pg|png|svg)$/,
           use: {
-            loader: "url-loader",
+            loader: `url-loader`,
             options: {
               limit: 1000,
-              context: "./src",
-              name: "[path][name].[hash].[ext]"
+              context: `./src`,
+              name: `[path][name].[hash].[ext]`
             }
           }
         },
         {
           test: /\.css$/,
           use: [
-            mode === "production"
+            mode === `production`
               ? MiniCssExtractPlugin.loader
-              : "style-loader",
-            "css-loader",
-            "resolve-url-loader",
+              : `style-loader`,
+            `css-loader`,
+            `resolve-url-loader`,
             {
-              loader: "postcss-loader",
+              loader: `postcss-loader`,
               options: {
                 sourceMap: true,
                 plugins: [
                   require(`postcss-import`),
-                  postcssPresetEnv({ stage: 0 })
+                  postcssPresetEnv({stage: 0})
                 ]
               }
             }
@@ -67,11 +67,11 @@ module.exports = (env, { mode }) => {
     },
     plugins: [
       new HtmlWebPackPlugin({
-        template: "./src/index.html",
-        filename: "./index.html"
+        template: `./src/index.html`,
+        filename: `./index.html`
       }),
       new MiniCssExtractPlugin({
-        filename: "style.[contenthash].css"
+        filename: `style.[contenthash].css`
       }),
       new OptimizeCSSAssetsPlugin()
     ]
