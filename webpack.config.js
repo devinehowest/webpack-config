@@ -29,13 +29,13 @@ module.exports = (env, {mode}) => {
             {
               loader: 'html-srcsets-loader',
               options: {
-                attrs: [':srcset']
+                attrs: [':src', ':srcset']
               }
             }
           ]
         },
         {
-          test: /\.(je?pg|png|svg)$/,
+          test: /\.(jpe?g|png|svg)$/,
           use: {
             loader: 'url-loader',
             options: {
