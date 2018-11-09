@@ -35,13 +35,13 @@ module.exports = (env, {mode}) => {
           ]
         },
         {
-          test: /\.(jpe?g|png|svg)$/,
+          test: /\.(jpe?g|png|svg|webp)$/,
           use: {
             loader: 'url-loader',
             options: {
               limit: 1000,
               context: './src',
-              name: '[path][name].[hash].[ext]'
+              name: '[path][name].[ext]'
             }
           }
         },
