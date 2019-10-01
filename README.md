@@ -1,4 +1,4 @@
-# webpack-config-20182019
+# webpack-config
 
 ## Doel
 
