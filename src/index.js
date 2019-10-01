@@ -1,4 +1,4 @@
-import "./style.css";
+import './style.css';
 
 console.log(`Hey, ik ben een JS file`);
 const arr = [1, 2, 3];
